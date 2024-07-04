@@ -1,15 +1,21 @@
-// define interface for Hero and Shop objects
+// ชื่อ:ธีธัช บุญธรรม รหัสนักศึกษา:660610764
 interface Hero {
-  /* Your code here */
+  items: string[];
+  gold: number;
 }
 
 interface Shop {
-  /* Your code here */
+  item: string;
+  price: number;
 }
 
 // assign interface/type to the function definition properly
-function buyItem(hero, shop) {
-  /* Your code here */
+function buyItem(hero :Hero, shop :Shop) {
+  if(hero.gold >= shop.price ){
+    hero.gold -= shop.price;
+    hero.items.push(shop.item);
+  }
+  return hero;
 }
 
 //Test cases : assign proper type/interface to all objects
